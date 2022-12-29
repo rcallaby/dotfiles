@@ -1,0 +1,62 @@
+# This file contains many helpful alias and other shortcuts as you would find in a bashrc file 
+
+# Common aliases
+
+alias ll="ls -l"
+alias lo="ls -o"
+alias lh="ls -lh"
+alias la="ls -la"
+alias sl="ls"
+alias l="ls"
+alias s="ls"
+
+# Move 'up' so many directories instead of using several cd ../../, etc.
+up() { cd $(eval printf '../'%.0s {1..$1}) && pwd; }
+
+#Another variation of the one above
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+#Tail all logs in /var/log
+alias logs="find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
+
+# Colors for All grep commands such as grep, egrep and zgrep
+export GREP_OPTIONS='--color=auto'
+
+# Git related
+alias gs='git status'
+alias gc='git commit'
+alias ga='git add'
+alias gd='git diff'
+alias gb='git branch'
+alias gl='git log'
+alias gsb='git show-branch'
+alias gco='git checkout'
+alias gg='git grep'
+alias gk='gitk --all'
+alias gr='git rebase'
+alias gri='git rebase --interactive'
+alias gcp='git cherry-pick'
+alias grm='git rm'
+
+# For when you've spent too much time in DOS
+alias cls="clear"
+alias dir="ls"
+alias deltree="rm -r"
+alias rmdir="rm -r"
+alias rd="rm -r"
+alias rename="mv"
+alias cd..="cd .."
+alias chdir="pwd"
+alias cmd="bash"
+alias edit="nano -m -u -c -W --tabsize=4 --fill=100 --autoindent"
+alias erase="rm"
+alias del="rm"
+alias delete="rm"
+alias expand="extract"
+diskcopy(){ dd if=$1 of=$2; }
+alias tasklist="htop"
+alias tracert="traceroute"
+
+
