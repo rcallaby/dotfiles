@@ -1,0 +1,60 @@
+# This is where various useful bash functions should reside.
+
+function git_init() {
+    if [ -z "$1" ]; then
+        printf "%s\n" "Please provide a directory name.";
+    else
+        mkdir "$1";
+        builtin cd "$1";
+        pwd;
+        git init;
+        touch readme.md .gitignore LICENSE;
+        echo "# $(basename $PWD)" >> readme.md
+    fi
+}
+
+function weather_report() {
+
+    local response=$(curl --silent 'https://api.openweathermap.org/data/2.5/weather?id=5128581&units=imperial&appid=<YOUR_API_KEY>') 
+
+    local status=$(echo $response | jq -r '.cod')
+
+	# Check for the 200 response indicating a successful API query.
+    case $status in
+		
+        200) printf "Location: %s %s\n" "$(echo $response | jq '.name') $(echo $response | jq '.sys.country')"  
+             printf "Forecast: %s\n" "$(echo $response | jq '.weather[].description')" 
+             printf "Temperature: %.1f°F\n" "$(echo $response | jq '.main.temp')" 
+             printf "Temp Min: %.1f°F\n" "$(echo $response | jq '.main.temp_min')" 
+             printf "Temp Max: %.1f°F\n" "$(echo $response | jq '.main.temp_max')" 
+            ;;
+        401) echo "401 error"
+            ;;
+        *) echo "error"
+            ;;
+
+    esac
+
+}
+
+function hg() {
+    history | grep "$1";
+}
+
+#Search for a specific file 
+#Use: "findfile example"
+#Results: prints any files that begin with "example", is not case-sensitive, picks up any file type (ex. result: ExampleTest.docx)
+findfile() {
+   file = "$@"
+   file += "*"
+   find . -iname $file 2>&1 | grep -v "Operation not permitted"
+}
+
+#Search for all files with a specific extension
+#Use: "fondest swift"
+#Results: prints all .swift files
+findext() {
+   ext = "*."
+   ext += "$@"
+   find . -iname $ext 2>&1 | grep -v "Operation not permitted"
+}
