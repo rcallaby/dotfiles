@@ -42,8 +42,6 @@ function hg() {
 }
 
 #Search for a specific file 
-#Use: "findfile example"
-#Results: prints any files that begin with "example", is not case-sensitive, picks up any file type (ex. result: ExampleTest.docx)
 findfile() {
    file = "$@"
    file += "*"
@@ -51,8 +49,6 @@ findfile() {
 }
 
 #Search for all files with a specific extension
-#Use: "fondest swift"
-#Results: prints all .swift files
 findext() {
    ext = "*."
    ext += "$@"
