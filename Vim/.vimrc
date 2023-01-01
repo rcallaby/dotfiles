@@ -39,7 +39,7 @@ if has("autocmd")
 endif
 
 set background=dark
-# colorscheme solarized
+colorscheme solarized
 
 let mapleader = ","
 nmap <leader>v :tabedit $MYVIMRC<CR>
