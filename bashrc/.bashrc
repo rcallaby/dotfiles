@@ -4,3 +4,5 @@
 source ~./$HOME/.alias
 source ~./$HOME/.functions
 source ~./$HOME/.profile
+
+
