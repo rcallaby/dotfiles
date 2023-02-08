@@ -14,3 +14,6 @@ Linux Dot Files are configuration files used to customize various aspects of the
 .tmux.conf: Tmux is a popular terminal multiplexer in the Linux world and the .tmux.conf file is used to configure Tmux. This file can be used to change the appearance of Tmux, set key bindings, and configure various options. For example, users can change the status bar color, set the default window size, and configure the mouse behavior.
 
 In conclusion, Linux dot files are powerful tools that allow users to customize the behavior of various applications and the operating system itself. These files play a crucial role in the Linux ecosystem and are widely used by system administrators and power users. Understanding how to use and configure these files is an important aspect of Linux administration and can greatly enhance the user experience.
+
+
+
