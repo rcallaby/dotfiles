@@ -51,7 +51,7 @@ export GREP_OPTIONS='--color=auto'
 # Git related
 alias gs='git status'
 alias gc='git commit'
-alias ga='git add'
+alias ga='git add .'
 alias gd='git diff'
 alias gb='git branch'
 alias gl='git log'
@@ -71,7 +71,6 @@ alias deltree="rm -r"
 alias rmdir="rm -r"
 alias rd="rm -r"
 alias rename="mv"
-alias cd..="cd .."
 alias chdir="pwd"
 alias cmd="bash"
 alias edit="nano -m -u -c -W --tabsize=4 --fill=100 --autoindent"
