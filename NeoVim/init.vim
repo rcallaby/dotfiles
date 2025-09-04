@@ -1,7 +1,5 @@
-# This currently is a blank NeoVim config file.
-
-" paperbenni's vimrc
-" requires nvim-git
+# This is currently a work in progress.
+# Will need to update this when/if I find better configurations
 
 set number
 set mouse=a
@@ -9,7 +7,6 @@ let mapleader = " "
 map <SPACE> <leader>
 
 call plug#begin('~/.vim/plugged')
-    " essential stuff
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-dadbod'
     Plug 'kristijanhusak/vim-dadbod-ui'
@@ -58,6 +55,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'kassio/neoterm'
     Plug 'jiangmiao/auto-pairs'
     Plug 'junegunn/vim-easy-align'
+
 call plug#end()
 
 
